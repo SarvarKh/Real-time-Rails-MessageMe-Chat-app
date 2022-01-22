@@ -8,5 +8,9 @@
 
 User.create(username: "John Doe", password: "password")
 User.create(username: "Jane Doe", password: "password")
-User.create(username: "Sarvar Khalimov", password: "password")
-User.create(username: "Adele", password: "password")
+u3 = User.create(username: "Sarvar Khalimov", password: "password")
+u4 = User.create(username: "Adele", password: "password")
+
+Message.create(body: "Hi devs...", user: User.first)
+Message.create(body: "Hehehey, welcome!", user: u3)
+Message.create(body: "Hi everyone, how is it going?", user: u4)
