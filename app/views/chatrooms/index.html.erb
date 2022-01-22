@@ -1,5 +1,5 @@
 <h4 class="ui center aligned medium icon header">
-  <i class="circular orange rocketchat icon"></i>
+  <i class="circular blue paper plane icon"></i>
   Say Something
 </h4>
 <div class="ui two column grid">
@@ -11,14 +11,14 @@
                 </div>
             </div>
             <div class="extra content">
-                  <form class="ui reply form">
+                <%= form_for(@message, html: {class: "ui reply form", role: "form"}, url: message_path) do |f| %>
                     <div class="field">
                         <div class="ui fluid icon input">
-                            <input type="text" placeholder="Enter message...">
-                            <i class="bordered inverted orange icon edit"></i>
+                            <%= f.text_field :body %>
+                            <%= f.button '<i class="bordered inverted blue icon edit"></i>'.html_safe %>
                         </div>
                     </div>
-                </form>
+                <% end %>
             </div>
         </div>
     </div>
@@ -26,7 +26,7 @@
     <div class="four wide column">
         <div class="ui fluid raised card chatbox">
             <div class="content">
-                <div class="ui inverted vertical menu">
+                <div class="ui blue inverted vertical menu">
                     <a class="active item">
                         Home
                     </a>
