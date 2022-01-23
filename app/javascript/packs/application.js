@@ -16,6 +16,12 @@ ActiveStorage.start()
 // Loads all Semantic javascripts
 //= require semantic-ui
 
+const scroll_bottom = () => {
+    if ($('#messages').length > 0) {
+        $('#messages').scrollTop($('#messages')[0].scrollHeight);
+    }
+}
+
 require("semantic-ui-sass")
 $(document).on("turbolinks:load", () => {
     $(".ui.dropdown").dropdown();
@@ -23,4 +29,7 @@ $(document).on("turbolinks:load", () => {
     $('.message .close').on('click', function() {
         $(this).closest('.message').transition('fade');
     });
+    scroll_bottom();
 });
+
+export { scroll_bottom }
