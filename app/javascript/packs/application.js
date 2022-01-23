@@ -22,6 +22,15 @@ const scroll_bottom = () => {
     }
 }
 
+const submit_message = () => {
+    $('#message_body').on('keydown', function(e) {
+        if (e.keyCode == 13) {
+            $('button').click();
+            e.target.value = "";
+        }
+    })
+}
+
 require("semantic-ui-sass")
 $(document).on("turbolinks:load", () => {
     $(".ui.dropdown").dropdown();
@@ -29,6 +38,7 @@ $(document).on("turbolinks:load", () => {
     $('.message .close').on('click', function() {
         $(this).closest('.message').transition('fade');
     });
+    submit_message();
     scroll_bottom();
 });
 
