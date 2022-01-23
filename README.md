@@ -13,6 +13,7 @@
 
 - Ruby 2.7.1
 - Ruby on Rails 6.1.4 (ActiveCable & Web sockets)
+- Semantic UI
 - VS code
 - Linters
 
